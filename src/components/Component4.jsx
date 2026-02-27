@@ -19,6 +19,7 @@ function Component4({
   pop,
   pop1,
   title,
+  backPath, // ✅ NEW PROP
   showMenubar = false,
   showBack = true,
   showSearch = false,
@@ -64,7 +65,13 @@ function Component4({
             {/* BACK BUTTON */}
             {showBack && (
               <button
-                onClick={() => navigate(-1)}
+                onClick={() => {
+                  if (backPath) {
+                    navigate(backPath);
+                  } else {
+                    navigate(-1);
+                  }
+                }}
                 className={`p-1 rounded-full ${hoverColor}`}
               >
                 <BackIcon size={24} />

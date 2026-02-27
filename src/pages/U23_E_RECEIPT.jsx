@@ -35,7 +35,8 @@ const U23EReceipt = () => {
       <Component4
         title="E-RECEIPT"
         theme="black"
-        showBack
+        showBack={true}
+        backPath="/Page11"
         onDownload={handleDownload}  // ✅ show download icon
         onPrint={handlePrint}        // ✅ show print icon
       />
