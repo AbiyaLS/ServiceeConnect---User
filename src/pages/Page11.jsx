@@ -6,7 +6,8 @@ import Comp12 from "../components/Comp12";
 import Comp13 from "../components/Comp13";
 import Comp14 from "../components/Comp14";
 import PageU37 from "./PageU37";
-import PageU35 from "./PageU35";
+import PageU35 from "./pageU35";
+
 import PopularSirviceCard from "../components/PopularSirviceCard";
 import BottomNavBar from "../components/BottomNavBar";
 

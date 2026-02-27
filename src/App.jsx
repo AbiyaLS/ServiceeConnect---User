@@ -70,6 +70,7 @@ import Page_46 from "./pages/Page_46.jsx";
 import Page_48 from "./pages/Page_48.jsx";
 import Page9 from "./pages/Page9.jsx";
 import OfferPage from "./pages/OfferPage.jsx";
+import PageU35 from "./pages/pageU35.jsx";
 
 function App() {
   return (
@@ -127,6 +128,7 @@ function App() {
           <Route path="/SirviceProvidersPage" element={<Page17 />} />
           <Route path="/SirvicesPage" element={<Page18 />} />
           <Route path="/offers" element={<OfferPage />} />
+           <Route path="/page35" element={<PageU35 />} />
 
 
           {/* New Pages Routes by Abhishek */}
