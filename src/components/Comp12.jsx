@@ -9,7 +9,7 @@ import plumbing from "../assets/plumbing.png"
 import homerepair from "../assets/home-repair.png"
 import health from "../assets/health.png"
 import event from "../assets/event.png"
-import it from "../assets/it.png"
+import tech from "../assets/tech.png"
 import business from "../assets/business.png"
 
 const services = [
@@ -78,7 +78,7 @@ const services = [
   {
     id: 10,
     name: "Technology sirvice",
-     Image: <img src={it} alt="" />,
+     Image: <img src={tech} alt="" />,
     
     bg: "bg-green-100",
     

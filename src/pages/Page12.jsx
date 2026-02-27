@@ -11,7 +11,7 @@ import plumbing from "../assets/plumbing.png"
 import homerepair from "../assets/home-repair.png"
 import health from "../assets/health.png"
 import event from "../assets/event.png"
-import it from "../assets/it.png"
+import tech from "../assets/tech.png"
 import business from "../assets/business.png"
 
 const Page12 = () => {
@@ -74,7 +74,7 @@ const Page12 = () => {
         </Link>
         <Link to="/Page">
           <button>
-            <CategoryItem18 image={it} tittle="Technology Sirvices" />
+            <CategoryItem18 image={tech} tittle="Technology Sirvices" />
           </button>
         </Link>
         <Link to="/Page">
