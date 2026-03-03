@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   ArrowLeft,
   CircleChevronLeft,
+  CircleChevronRight ,
   Search,
   Phone,
   SlidersHorizontal,
@@ -19,7 +20,7 @@ function Component4({
   pop,
   pop1,
   title,
-  backPath, // ✅ NEW PROP
+  backPath,
   showMenubar = false,
   showBack = true,
   showSearch = false,
@@ -42,39 +43,122 @@ function Component4({
   const hoverColor = isDark ? "hover:bg-gray-800" : "hover:bg-gray-100";
   const inputBg = isDark ? "bg-[#2b2b2b] text-white" : "bg-gray-100 text-black";
 
-  const BackIcon = isDark ? CircleChevronLeft : ArrowLeft;
+  const DesktopBackIcon = isDark ? CircleChevronLeft : ArrowLeft;
+
+  const handleBack = () => {
+    if (backPath) {
+      navigate(backPath);
+    } else {
+      navigate(-1);
+    }
+  };
 
   return (
     <>
       <header className={`px-4 py-4 ${bgColor} ${textColor}`}>
-        <div className="flex items-center justify-between">
+
+        {/* ================= MOBILE VIEW ================= */}
+        <div className="flex items-center justify-between md:hidden">
+
+          {/* LEFT ICONS */}
+          <div className="flex items-center gap-3">
+
+            {showMenubar && (
+              <button
+                onClick={pop}
+                className={`p-1 rounded-full ${hoverColor}`}
+              >
+                <MoreVertical size={22} />
+              </button>
+            )}
+
+            {showFilter && (
+              <button
+                onClick={() => setShowFilterPopup(true)}
+                className={`p-1 rounded-full ${hoverColor}`}
+              >
+                <SlidersHorizontal size={22} />
+              </button>
+            )}
+
+            {showSearch && (
+              <button
+                onClick={() => setShowSearchBar(!showSearchBar)}
+                className={`p-1 rounded-full ${hoverColor}`}
+              >
+                {showSearchBar ? <X size={22} /> : <Search size={22} />}
+              </button>
+            )}
+
+            {showPhone && (
+              <Link to="/Page">
+                <button className={`p-1 rounded-full ${hoverColor}`}>
+                  <Phone size={22} />
+                </button>
+              </Link>
+            )}
+          </div>
+
+          {/* CENTER TITLE */}
+          <h1 className="text-lg font-semibold uppercase text-center flex-1">
+            {title}
+          </h1>
+
+          {/* RIGHT SIDE (Notification, Profile, Back) */}
+          <div className="flex items-center gap-3">
+
+            {shownotification && (
+              <Link to="/PageU40">
+                <button className={`p-1 rounded-full ${hoverColor}`}>
+                  <Bell size={22} />
+                </button>
+              </Link>
+            )}
+
+            {showprofil && (
+              <button onClick={pop1} className="p-0 bg-white rounded-full">
+                <img
+                  className="h-7 w-7 rounded-full object-cover"
+                  src={user}
+                  alt="profile"
+                />
+              </button>
+            )}
+
+            {showBack && (
+              <button
+                onClick={handleBack}
+                className={`p-1 rounded-full ${hoverColor}`}
+              >
+                {/* ✅ Mobile Back Icon */}
+                <CircleChevronRight  size={24} />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* ================= DESKTOP VIEW ================= */}
+        <div className="hidden md:flex items-center justify-between">
 
           {/* LEFT SECTION */}
           <div className="flex items-center gap-2">
 
-            {/* MENU ICON (Mobile Only) */}
             {showMenubar && (
               <button
                 onClick={pop}
-                className={`p-1 rounded-full ${hoverColor} md:hidden`}
+                className={`p-1 rounded-full ${hoverColor}`}
               >
                 <MoreVertical size={24} />
               </button>
             )}
 
-            {/* BACK BUTTON */}
             {showBack && (
               <button
-                onClick={() => {
-                  if (backPath) {
-                    navigate(backPath);
-                  } else {
-                    navigate(-1);
-                  }
-                }}
+                onClick={handleBack}
                 className={`p-1 rounded-full ${hoverColor}`}
               >
-                <BackIcon size={24} />
+                {/* ✅ Desktop Back Icon */}
+                <DesktopBackIcon size={24} />
               </button>
             )}
 
@@ -154,7 +238,7 @@ function Component4({
           </div>
         </div>
 
-        {/* SEARCH INPUT */}
+        {/* ================= SEARCH INPUT ================= */}
         {showSearchBar && (
           <div className="mt-4">
             <input
@@ -166,7 +250,7 @@ function Component4({
         )}
       </header>
 
-      {/* FILTER POPUP */}
+      {/* ================= FILTER POPUP ================= */}
       {showFilterPopup && (
         <FilterPopUp onClose={() => setShowFilterPopup(false)} />
       )}

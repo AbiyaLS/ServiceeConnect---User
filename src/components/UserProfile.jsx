@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import user from "../assets/user.jpg"
 
 export default function UserProfile() {
+   const navigate = useNavigate();
   const profileOptions = [
     { icon: <User />, label: "Edit Profile", path: "/pageu36" },
     { icon: <Wallet />, label: "Payment Option", path: "/U21_PAYMENT_METHODS/" },
@@ -38,7 +39,7 @@ export default function UserProfile() {
   return (
    
       <div className="max-w-lg mt-9  mx-auto px-4 pb-6 rounded-2xl shadow-2xl shadow-gray-500">
-
+  
         {/* Profile Image */}
         <label>
           <div className="cursor-pointer bg-gray-200 w-20 h-20 rounded-full relative mx-auto -top-8 shadow-md">

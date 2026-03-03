@@ -3,12 +3,21 @@ import { BiCalendar, BiEnvelope } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa";
 import { Image } from "lucide-react";
 import profile from "../assets/user.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function UserProfileEdit() {
+  const navigate = useNavigate
   return (
     /* ===== SAME OUTER LAYOUT AS USER PROFILE ===== */
     <div className="bg-gray-200 min-h-screen p-6 md:p-10">
       <div className="max-w-lg bg-white mx-auto px-4 pb-6 rounded-2xl shadow-2xl shadow-gray-500">
+         {/* ❌ Close Button */}
+      {/* <button
+        onClick={() => navigate(-1)}
+        className="absolute top-4 right-4 bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition"
+      >
+        <X className="w-4 h-4 text-gray-700" />
+      </button>  */}
 
         {/* ===== Profile Image (same position & size) ===== */}
         <label>

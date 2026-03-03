@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import {
-  Twitter,
-  Facebook,
-  Chrome,
-  MessageCircle
-} from 'lucide-react';
+import React, { useState } from "react";
+import { Twitter, Facebook, Chrome, MessageCircle } from "lucide-react";
 
 export default function Invite() {
   const [teamMembers] = useState([
-    { id: 1, name: 'Dominick S. Jenkins', phone: '(+1) 202-697-7365' },
-    { id: 2, name: 'Duncan E. Hoffman', phone: '(+1) 307-688-4052' },
-    { id: 3, name: 'Roy R. McCraney', phone: '(+1) 601-897-1714' },
-    { id: 4, name: 'Janice R. Morris', phone: '(+1) 802-312-9206' }
+    { id: 1, name: "Dominick S. Jenkins", phone: "(+1) 202-697-7365" },
+    { id: 2, name: "Duncan E. Hoffman", phone: "(+1) 307-688-4052" },
+    { id: 3, name: "Roy R. McCraney", phone: "(+1) 601-897-1714" },
+    { id: 4, name: "Janice R. Morris", phone: "(+1) 802-312-9206" },
   ]);
 
   const handleInvite = (memberName) => {
@@ -21,7 +16,6 @@ export default function Invite() {
   return (
     <div className="min-h-screen bg-gray-200 flex justify-center items-start sm:items-center px-4">
       <div className="w-full max-w-md sm:max-w-lg">
-
         {/* Card */}
         <div className="bg-white rounded-xl shadow-md divide-y shadow-lg shadow-gray-400">
           {teamMembers.map((member) => (
@@ -58,22 +52,40 @@ export default function Invite() {
           </p>
 
           <div className="flex gap-4">
-            {[ 
-              { Icon: Facebook, color: 'text-blue-600' },
-              { Icon: Twitter, color: 'text-sky-400' },
-              { Icon: Chrome, color: 'text-red-500' },
-              { Icon: MessageCircle, color: 'text-green-500' }
-            ].map(({ Icon, color }, i) => (
-              <div
+            {[
+              {
+                Icon: Facebook,
+                color: "text-blue-600",
+                link: "https://www.facebook.com",
+              },
+              {
+                Icon: Twitter,
+                color: "text-sky-400",
+                link: "https://twitter.com",
+              },
+              {
+                Icon: Chrome,
+                color: "text-red-500",
+                link: "https://www.google.com",
+              },
+              {
+                Icon: MessageCircle,
+                color: "text-green-500",
+                link: "https://wa.me/", // WhatsApp
+              },
+            ].map(({ Icon, color, link }, i) => (
+              <a
                 key={i}
-                className="w-10 h-10 bg-white font-semibold shadow-md hover:shadow-gray-400 rounded-full flex items-center justify-center  cursor-pointer hover:scale-105 transition"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white shadow-md hover:shadow-gray-400 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition"
               >
                 <Icon size={25} className={color} />
-              </div>
+              </a>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );
