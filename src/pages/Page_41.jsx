@@ -17,7 +17,7 @@ const Page_41 = () => {
         //         <HelpCenter_49/>
         // </div>
 
-        <div className="h-screen flex flex-col bg-[#D9D9DB]">
+        <div className="h-screen flex flex-col bg-gray-100">
             <Component4
             title="Help Center"
                 theme="black"

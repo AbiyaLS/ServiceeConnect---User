@@ -70,7 +70,7 @@ const Faq_50 = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <div className="min-h-100 bg-[#D9D9DB] p-4 flex justify-center">
+        <div className="min-h-100 bg-gray-100 p-4 flex justify-center">
             {/* <div className="w-full max-w-md"> */}
             <div className="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
 

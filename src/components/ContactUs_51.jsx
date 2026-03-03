@@ -11,7 +11,7 @@ const contactItems = [
 
 const ContactUs_51 = () => {
   return (
-    <div className="min-h-100 bg-[#D9D9DB] px-4 py-6 flex justify-center">
+    <div className="min-h-100 bg-gray-100 px-4 py-6 flex justify-center">
       {/* <div className="w-full max-w-md space-y-4"> */}
       <div className="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl space-y-4">
 

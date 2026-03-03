@@ -109,7 +109,7 @@ export default function Comp12() {
       </div>
 
       {/* Categories */}
-      <div className="flex gap-5  overflow-x-auto scrollbar-hide ">
+      <div className="flex overflow-y-auto scrollbar-hide ">
         {services.map((service) => (
           <div
             key={service.id}

@@ -68,7 +68,7 @@ const Page11 = () => {
         </div>
 
         {/* CENTER CONTENT */}
-        <div className="w-full md:w-[80%] lg:w-[70%]">
+        <div className="w-full md:w-[80%] lg:w-[70%] bg-gray-100">
           <Comp10 />
           <Comp11 />
           <Comp12 />

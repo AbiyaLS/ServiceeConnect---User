@@ -18,7 +18,7 @@ export default function ServicesPage() {
     active === "All" ? services : services.filter((s) => s.cat === active);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen bg-gray-100">
       {/* header */}
       <div className="w-full">
         <Component4

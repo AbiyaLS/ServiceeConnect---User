@@ -14,7 +14,7 @@ const offers = [
 
 const OfferPage = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen bg-gray-100">
       {/* <div className='w-full'> */}
 
         <Component4 title="All Offers"
@@ -25,11 +25,11 @@ const OfferPage = () => {
       <div className="  p-4">
         <h1 className="text-3xl text-center font-bold mb-6">Available Offers</h1>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:p-6">
           {offers.map((offer, index) => (
             <div
               key={index}
-              className="bg-[#2b2e35] text-white p-5 rounded-xl shadow"
+              className="bg-[#2b2e35] text-white p-5 rounded-xl shadow-lg  hover:shadow-gray-500  "
             >
               <span className="text-sm text-yellow-400 font-bold">
                 {offer.discount}
