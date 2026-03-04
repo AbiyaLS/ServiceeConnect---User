@@ -136,7 +136,7 @@ const CardPaymentForm = () => {
     <div>
       
       {/* 1. CONTENT CONTAINER (Matches 'EditAds' margins) */}
-      <div className="sm:px-6 space-y-6 mt-5 w-full lg:max-w-[1000px] mx-auto min-h-screen">
+      <div className="sm:px-6 space-y-6 mt-5 w-full lg:max-w-[1000px] mx-auto min-h-screen bg-gray-100">
         
         {/* Header - Responsive Size */}
         <p className="text-gray-900 font-bold text-base md:text-xl mb-2 transition-all">

@@ -10,7 +10,7 @@ const U18_Request_Service = () => {
   const navigate = useNavigate();
 
   const handleGoToReceipt = () => {
-    navigate("/U23EReceipt");
+    navigate("/page24");
   };
 
   return (

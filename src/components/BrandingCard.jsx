@@ -31,7 +31,7 @@ export default function BrandingCard() {
   },
 ];
     const handleClick = (id) => {
-        navigate(`/U23EReceipt`);
+        navigate(`/page24`);
       };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 md:mx-10">
@@ -39,7 +39,7 @@ export default function BrandingCard() {
         <div
           key={card.id}
           onClick={()=>handleClick(card.id)}
-          className="w-full bg-white rounded-md shadow-[0_4px_6px_rgba(75,75,75,0.45)] px-4 py-4 flex items-center gap-4 hover:bg-gray-300"
+          className="w-full bg-white rounded-md shadow-[0_4px_6px_rgba(75,75,75,0.45)] px-4 py-4 flex items-center gap-4 hover:shadow-lg hover:shadow-gray-400"
         >
           {/* Image Placeholder */}
           <div className="bg-black w-20 py-8 rounded-xl" />

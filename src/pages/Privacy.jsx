@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Component4 from "../components/Component4";
+import { Link } from "react-router-dom";
 
 const Privacy = () => {
   const [settings, setSettings] = useState({
@@ -9,12 +10,12 @@ const Privacy = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white md:bg-gray-200">
+    <div className="min-h-screen  bg-gray-100">
       <Component4 title="Privacy" theme="black" />
 
       <div className="px-4 py-6 space-y-6 max-w-md mx-auto">
         {/* Privacy Controls */}
-        <div className="bg-white rounded-xl shadow p-4 space-y-4">
+        <div className="bg-white rounded-xl shadow-md p-4 space-y-4">
           <h3 className="text-sm font-semibold text-gray-900">
             Privacy Controls
           </h3>
@@ -43,7 +44,7 @@ const Privacy = () => {
         </div>
 
         {/* Data & Security */}
-        <div className="bg-white rounded-xl shadow p-4 space-y-3">
+        <div className="bg-white rounded-xl shadow-md p-4 space-y-3">
           <h3 className="text-sm font-semibold text-gray-900">
             Data & Security
           </h3>
@@ -59,12 +60,15 @@ const Privacy = () => {
         </div>
 
         {/* Danger Zone */}
-        <div className="bg-white rounded-xl shadow p-4 space-y-3">
-          <h3 className="text-sm font-semibold text-red-600">Danger Zone</h3>
-
-          <button className="text-sm font-medium text-red-600">
+        <div className="bg-white rounded-xl shadow-md p-4 space-y-3">
+          <h3 className="text-sm font-semibold text-red-600 hover:text-red-700 hover:font-medium">Danger Zone</h3>
+          <Link to="/">
+          <button className="text-sm font-medium text-red-600 hover:text-red-700 hover:font-medium">
             Delete My Account
           </button>
+          </Link>
+
+          
         </div>
       </div>
     </div>

@@ -63,7 +63,7 @@ const navigate = useNavigate();
         </button>
 
         <button
-          onClick={() => navigate('/U23EReceipt')}
+          onClick={() => navigate('/page24')}
           className="bg-[#1A1C22] text-white w-full py-4 px-6 rounded-full flex items-center justify-between hover:bg-gray-800 transition-colors"
         >
           <span className="font-semibold">{receiptButtonText}</span>

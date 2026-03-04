@@ -14,7 +14,7 @@ export default function JobLists() {
 
     return (
         
-        <div className='px-4 sm:px-8 py-4 bg-gray-300 min-h-screen'>
+        <div className='px-4 sm:px-8 py-4 bg-gray-100 min-h-screen'>
             {/* --- Content Wrapper --- */}
                 
                 {/* Toggle Logic */}

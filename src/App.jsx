@@ -109,8 +109,8 @@ function App() {
           
 
           {/* New Page Routes */}
-          <Route path="/" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 />} />
+          <Route path="/page1" element={<Page1 />} />
+          <Route path="/" element={<Page2 />} />
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page4" element={<Page4 />} />
           <Route path="/page5" element={<Page5 />} />
@@ -171,7 +171,6 @@ function App() {
           <Route path="/Page_41" element={<Page_41 />} />
           <Route path="/Page_45" element={<Page_45 />} />
 
-          <Route path="/Page_41" element={<Page_41 />} />
           <Route path="/Page_43" element={<Page_43 />} />
 
           <Route path="/Page_44" element={<Page_44 />} />

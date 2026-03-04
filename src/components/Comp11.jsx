@@ -1,5 +1,5 @@
-import { useState } from "react";
-import {Link} from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const offers = [
   {
@@ -22,10 +22,19 @@ const offers = [
 const Comp11 = () => {
   const [active, setActive] = useState(0);
 
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % offers.length);
+    }, 3000);
+
+    return () => clearInterval(interval); 
+  }, []);
+
   return (
     <div className="mx-auto my-6 max-w-[90%] h-56 bg-[#2b2e35] text-white rounded-2xl p-6 relative overflow-hidden shadow-md shadow-gray-900">
 
-      {/* SLIDER VIEWPORT */}
+      
       <div className="overflow-hidden h-full">
         {/* SLIDER */}
         <div
@@ -35,10 +44,7 @@ const Comp11 = () => {
           }}
         >
           {offers.map((offer, index) => (
-            <div
-              key={index}
-              className="w-full flex-shrink-0"
-            >
+            <div key={index} className="w-full flex-shrink-0">
               <span className="text-xs font-bold text-gray-300">
                 {offer.discount}
               </span>
@@ -51,8 +57,8 @@ const Comp11 = () => {
                 {offer.desc}
               </p>
 
-              <button className="text-xs text-white hover:text-gray-500 font-semibold float-end ">
-                <Link to="/offers"> SEE ALL</Link>
+              <button className="text-xs text-white hover:text-gray-500 font-semibold float-end">
+                <Link to="/Offers">SEE ALL</Link>
               </button>
             </div>
           ))}
@@ -74,7 +80,7 @@ const Comp11 = () => {
         ))}
       </div>
 
-      {/* DECOR */}
+      
       <div className="absolute -top-8 -right-8 w-28 h-28 bg-white/5 rounded-full"></div>
       <div className="absolute bottom-6 right-12 w-20 h-20 bg-white/5 rounded-full"></div>
     </div>

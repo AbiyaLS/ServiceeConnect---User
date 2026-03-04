@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   ArrowLeft,
   CircleChevronLeft,
-  CircleChevronRight ,
+  CircleChevronRight,
   Search,
   Phone,
   SlidersHorizontal,
@@ -29,9 +29,9 @@ function Component4({
   showclear = false,
   shownotification = false,
   showprofil = false,
+  showReceiptMenu = false,
   theme = "white",
-  onDownload,
-  onPrint,
+      // ✅ receive print
 }) {
   const navigate = useNavigate();
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -60,7 +60,7 @@ function Component4({
         {/* ================= MOBILE VIEW ================= */}
         <div className="flex items-center justify-between md:hidden">
 
-          {/* LEFT ICONS */}
+          {/* LEFT SIDE */}
           <div className="flex items-center gap-3">
 
             {showMenubar && (
@@ -99,12 +99,12 @@ function Component4({
             )}
           </div>
 
-          {/* CENTER TITLE */}
+          {/* TITLE */}
           <h1 className="text-lg font-semibold uppercase text-center flex-1">
             {title}
           </h1>
 
-          {/* RIGHT SIDE (Notification, Profile, Back) */}
+          {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
 
             {shownotification && (
@@ -130,8 +130,7 @@ function Component4({
                 onClick={handleBack}
                 className={`p-1 rounded-full ${hoverColor}`}
               >
-                {/* ✅ Mobile Back Icon */}
-                <CircleChevronRight  size={24} />
+                <CircleChevronRight size={24} />
               </button>
             )}
           </div>
@@ -143,21 +142,11 @@ function Component4({
           {/* LEFT SECTION */}
           <div className="flex items-center gap-2">
 
-            {showMenubar && (
-              <button
-                onClick={pop}
-                className={`p-1 rounded-full ${hoverColor}`}
-              >
-                <MoreVertical size={24} />
-              </button>
-            )}
-
             {showBack && (
               <button
                 onClick={handleBack}
                 className={`p-1 rounded-full ${hoverColor}`}
               >
-                {/* ✅ Desktop Back Icon */}
                 <DesktopBackIcon size={24} />
               </button>
             )}
@@ -186,23 +175,15 @@ function Component4({
               </button>
             )}
 
-            {onDownload && (
-              <button
-                onClick={onDownload}
-                className={`p-1 rounded-full ${hoverColor}`}
-              >
-                <Download size={22} />
-              </button>
-            )}
-
-            {onPrint && (
-              <button
-                onClick={onPrint}
-                className={`p-1 rounded-full ${hoverColor}`}
-              >
-                <Printer size={22} />
-              </button>
-            )}
+            {showReceiptMenu && (
+          <button
+            onClick={onMenuClick}
+            className={`p-1 rounded-full ${hoverColor}`}
+          >
+            <MoreVertical size={22} />
+          </button>
+        )}
+            
 
             {shownotification && (
               <Link to="/PageU40">
@@ -238,7 +219,7 @@ function Component4({
           </div>
         </div>
 
-        {/* ================= SEARCH INPUT ================= */}
+        {/* SEARCH INPUT */}
         {showSearchBar && (
           <div className="mt-4">
             <input
@@ -250,7 +231,6 @@ function Component4({
         )}
       </header>
 
-      {/* ================= FILTER POPUP ================= */}
       {showFilterPopup && (
         <FilterPopUp onClose={() => setShowFilterPopup(false)} />
       )}

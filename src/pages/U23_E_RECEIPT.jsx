@@ -1,31 +1,38 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import html2canvas from "html2canvas";
 import Component4 from "../components/Component4";
 import Ereciept from "../components/Ereciept";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 const U23EReceipt = () => {
-  const navigate = useNavigate();
 
-  const handleBackToPayment = () => {
-    navigate("/U21_PAYMENT_METHODS");
-  };
-
+  // ✅ DOWNLOAD → Opens system save dialog
   const handleDownload = async () => {
     const element = document.getElementById("receipt-content");
     if (!element) return;
 
-    const canvas = await html2canvas(element, {
-      backgroundColor: "#ffffff",
-      scale: 3,
-    });
-    const dataUrl = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.href = dataUrl;
-    link.download = "E-Receipt.png";
-    link.click();
+    try {
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true
+      });
+
+      const imgData = canvas.toDataURL("image/png");
+
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      const imgWidth = 190; // A4 width
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+      pdf.save("E-Receipt.pdf"); // 🔥 this opens save dialog
+
+    } catch (error) {
+      console.error("Download failed:", error);
+    }
   };
 
+  // ✅ PRINT
   const handlePrint = () => {
     window.print();
   };
@@ -37,11 +44,11 @@ const U23EReceipt = () => {
         theme="black"
         showBack={true}
         backPath="/Page11"
-        onDownload={handleDownload}  // ✅ show download icon
-        onPrint={handlePrint}        // ✅ show print icon
+        onDownload={handleDownload}
+        onPrint={handlePrint}
       />
 
-      <div className="p-4">
+      <div className="p-4 flex justify-center">
         <Ereciept />
       </div>
     </div>

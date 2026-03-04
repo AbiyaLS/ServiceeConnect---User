@@ -1,6 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-export default function Component3() {
+import { Link } from "react-router-dom";
+
+export default function Component3({type="signin"}) {
+    const isSignIn = type === "signin";
+
 return (
 <div className="w-screen  mx-auto  flex justify-center bg-gray-200">
 <div className="w-80 p-3 text-center">
@@ -13,10 +17,15 @@ return (
 </div>
 
 
-<p className="text-sm">
-Already have an Account?{' '}
-<span className="font-semibold">SIGN IN</span>
-</p>
+ <p className="text-sm">
+          {isSignIn ? "Don't have an account?" : "Already have an account?"}{" "}
+          <Link
+            to={isSignIn ? "/page1" : "/"}
+            className="font-semibold text-blue-500 hover:underline"
+          >
+            {isSignIn ? "SIGN UP" : "SIGN IN"}
+          </Link> 
+        </p>
 </div>
 </div>
 );

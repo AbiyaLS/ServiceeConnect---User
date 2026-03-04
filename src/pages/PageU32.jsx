@@ -7,7 +7,7 @@ import Component4 from "../components/Component4";
 export default function PageU32() {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-gray-200">
+    <div className="min-h-screen bg-gray-100">
       <Component4
         title={"Transaction"}
         showBack={true}

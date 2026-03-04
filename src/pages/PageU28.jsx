@@ -12,7 +12,7 @@ export default function PageU28() {
             <Component4
             title={"Service Details"}
             theme="black"/>
-            <div className="py-5">
+            <div className="py-5 px-4">
                 <ServiceRequest />
             </div>
             

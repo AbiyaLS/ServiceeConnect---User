@@ -9,7 +9,7 @@ export default function LogOut() {
     // clear auth data if needed
     // localStorage.clear();
 
-    navigate('/page2'); // home page
+    navigate('/'); // home page
   };
 
   const handleCancel = () => {

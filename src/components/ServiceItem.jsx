@@ -11,7 +11,7 @@ export default function ServiceItem({
     <div
       onClick={onClick}
       className="relative bg-white rounded-xl shadow-[0_4px_6px_rgba(75,75,75,0.45)]
-        flex overflow-hidden w-full mt-1 cursor-pointer hover:bg-gray-300 transition"
+        flex overflow-hidden w-full mt-1 cursor-pointer hover:shadow-gray-400 hover:shadow-lg transition"
     >
       {/* Status Icon */}
       {completed && (

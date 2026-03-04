@@ -1,5 +1,5 @@
 import React from "react";
-import Component4 from "../components/Component";
+import Component4 from "../components/Component4";
 import JobLists from "../components/JobList";
 import BottomNavBar from "../components/BottomNavBar";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +11,8 @@ export default function PageU27() {
             <Component4 
                 title={"Jobs"} 
                 theme='black' 
-                showFilter='true' 
                 showSearch='true'
-                onSearchClick={() => navigate("/pageM1")}
-                
+                    
             />
             <JobLists />
             < BottomNavBar />

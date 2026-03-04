@@ -28,7 +28,7 @@ export default function ServicesPage() {
           theme="black"
         />
       </div>
-      <div className=" w p-4 ">
+      <div className=" p-4 md:p-8 ">
         {/* Category Tabs */}
         <div className="flex gap-2 mb-5  ">
           {categories.map((cat) => (

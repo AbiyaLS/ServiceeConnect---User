@@ -1,10 +1,10 @@
 import React from 'react'
-import Component4 from '../components/fourth'
+import Component4 from '../components/Component4'
 import Component8 from '../components/eighth'
 
 function Page8() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-200">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       
       <Component4  theme='black' title={"FORGOT PASSWORD"}/>
         <div className="flex-1 mt-28 " > 

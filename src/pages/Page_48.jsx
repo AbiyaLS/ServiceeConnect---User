@@ -10,8 +10,7 @@ const Page_48 = () => {
                 title="INVITE FRIEND"
                 theme="black"
                 showBack
-                showFilter
-                showSearch
+                
             />
 
             {/* Content area */}

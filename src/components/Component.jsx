@@ -17,6 +17,7 @@ export default function Component4({
   showPhone = false,
   showFilter = false,
   showMenu = false,
+  BackClick = false,
   onMenuClick,
   onBackClick,
   onSearchClick,
@@ -45,6 +46,16 @@ const BackIcon = isDark ? CircleChevronLeft : ArrowLeft;
             <BackIcon size={24} />
           </button>
         )}
+
+        {BackClick && (
+          <button
+            onClick={onBackClick}
+            className={`p-1 rounded-full ${hoverColor}`}
+          >
+            <BackIcon size={24} />
+          </button>
+        )}
+
         <div className="text-md md:text-lg lg:text-lg font-semibold uppercase">{title}</div>
       </div>
 

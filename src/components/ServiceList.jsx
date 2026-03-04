@@ -31,7 +31,7 @@ export default function ServiceList() {
   };
 
   return (
-    <div className="px-4 sm:px-8 py-4 bg-gray-200 min-h-screen">
+    <div className="px-4 sm:px-8 py-4 bg-gray-100 min-h-screen">
 
       {/* TOGGLE */}
       <div className="max-w-md mx-auto mb-8">

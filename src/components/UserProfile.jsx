@@ -38,7 +38,7 @@ export default function UserProfile() {
 
   return (
    
-      <div className="max-w-lg mt-9  mx-auto px-4 pb-6 rounded-2xl shadow-2xl shadow-gray-500">
+      <div className="max-w-lg mt-9  mx-auto px-4 pb-6 rounded-2xl shadow-2xl shadow-gray-500 ">
   
         {/* Profile Image */}
         <label>
